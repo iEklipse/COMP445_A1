@@ -1,0 +1,28 @@
+# COMP 445 - ASSIGNMENT 1
+# Tri-Luong Steven Dien
+# 27415281
+
+[GET REQUESTS]
+httpc get -v http://httpbin.org/status/418 
+httpc get http://httpbin.org/status/418 
+
+httpc get -v http://httpbin.org/get?course=networking&assignment=1 
+httpc get http://httpbin.org/get?course=networking&assignment=1 
+
+[POST REQUESTS]
+httpc post -h Content-Type:application/json -d {'Assignment': 1} http://httpbin.org/post 
+httpc post -v -h Content-Type:application/json -d {'Assignment': 1, 'Course': Networking} http://httpbin.org/post 
+httpc post -d {'Assignment': 1} http://httpbin.org/post 
+httpc post -h Content-Type:application/json -f input_file.txt http://httpbin.org/post 
+
+[BONUS - REDIRECT]
+httpc get -v http://httpbin.org/redirect/6 
+
+[BONUS - OUTPUT FILE]
+httpc get http://httpbin.org/status/418 -o output_file.txt
+httpc post -v -h Content-Type:application/json -d {'Assignment': 1, 'Course': Networking} http://httpbin.org/post -o output_file.txt
+
+
+
+Host: httpbin.org
+Port: 80
